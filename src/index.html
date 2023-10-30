@@ -7,29 +7,30 @@
     <title>FocusTimer</title>
     <link rel="shortcut icon" href="./assets/favIcon.svg" type="image/x-svg">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="./main.js" defer></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
     <div id="app">
         <buttton id="toggle-mode">
-            <span class="sr-only">Ativdar/Desativar Light Mode</span>
+            <span class="sr-only">Ativdar Light Mode</span>
             <i class="ph-bold ph-sun"></i>
             <i class="ph-bold ph-moon"></i>
         </buttton>
 
         <section id="timer" class="flex">
-            <span class="minutes">00</span>
+            <span id="minutes">00</span>
             <span>:</span>
-            <span class="seconds">00</span>
+            <span id="seconds">00</span>
         </section>
         
         <section id="controls" class="flex">
-            <button class="ph ph-play-circle"><span class="sr-only">Iniciar contador</span></button>
-            <button class="ph ph-pause-circle"><span class="sr-only">Pausar contador</span></button>
-            <button class="ph ph-timer secundery"><span class="sr-only">Ajustar contador</span></button>
-            <button class="ph ph-stop-circle secundery"><span class="sr-only">Reiniciar contador</span></button>
-            <button class="ph ph-speaker-none secundery"><span class="sr-only">Iniciar música</span></button>
-            <button class="ph ph-speaker-high"><span class="sr-only">Parar música</span></button>
+            <button data-action="toggleRunning" class="ph ph-play-circle"><span class="sr-only">Iniciar contador</span></button>
+            <button data-action="toggleRunning" class="ph ph-pause-circle"><span class="sr-only">Pausar contador</span></button>
+            <button data-action="set" class="ph ph-timer secundery"><span class="sr-only">Ajustar contador</span></button>
+            <button data-action="reset" class="ph ph-stop-circle secundery"><span class="sr-only">Reiniciar contador</span></button>
+            <button data-action="toggleMusic" class="ph ph-speaker-none secundery"><span class="sr-only">Iniciar música</span></button>
+            <button data-action="toggleMusic" class="ph ph-speaker-high"><span class="sr-only">Parar música</span></button>
         </section>
     </div>
 </body>
